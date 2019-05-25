@@ -62,6 +62,20 @@ const getBackgroundImageByElementId = (elementId) => {
   }
 }
 
+const addClassByElementId = (elementId, classList) => {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.classList.add(...classList);
+  }
+};
+
+const removeClassByElementId = (elementId, classList) => {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.classList.remove(...classList);
+  }
+};
+
 const utils = {
   truncateTextlength,
   formatDate,
@@ -70,5 +84,7 @@ const utils = {
   getValueByElementId,
   setBackgroundImageByElementId,
   getBackgroundImageByElementId,
+  addClassByElementId,
+  removeClassByElementId,
 };
 export default utils;

@@ -43,8 +43,23 @@ const handleChangeImageClick = () => {
 
 
 const validatePostForm = () => {
+  let isValid = true;
 
-  return true;
+  // title is required
+  const title = utils.getValueByElementId('postTitle');
+  if (!title) {
+    utils.addClassByElementId('postTitle', ['is-invalid']);
+    isValid = false;
+  }
+
+  // author is required
+  const author = utils.getValueByElementId('postAuthor');
+  if (!author) {
+    utils.addClassByElementId('postAuthor', ['is-invalid']);
+    isValid = false;
+  }
+
+  return isValid;
 };
 
 
@@ -63,11 +78,16 @@ const handlePostFormSubmit = async (postId) => {
 
       if (postId) {
         await postApi.updatePost(payload);
+        alert('Save post successfully');
       } else {
-        await postApi.addNewPost(payload);
-      }
+        const newPost = await postApi.addNewPost(payload);
 
-      alert('Save post successfully');
+        // Go to edit page
+        const editPageUrl = `add-edit-post.html?postId=${newPost.id}`;
+        window.location = editPageUrl;
+
+        alert('Add new post successfully');
+      }
     } catch (error) {
       alert('Failed to save post: ', error);
     }
@@ -94,9 +114,15 @@ const init = async () => {
 
     // Fill post data
     setPostFormValues(post);
+
+    // Show view detail link
+    const goToDetailPageLink = document.getElementById('goToDetailPageLink');
+    goToDetailPageLink.href = `post-detail.html?postId=${post.id}`;
+    goToDetailPageLink.innerText = 'View post detail';
   } else {
     // What we do in ADD mode
     // Random a post image =))
+    handleChangeImageClick();
   }
 
   // Add event for button: change post image

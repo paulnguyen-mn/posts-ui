@@ -41,7 +41,9 @@
             </a>
           </li>
 
-          <li class="nav-item"></li>
+          <li class="nav-item">
+            <a id="goToDetailPageLink" class="nav-link" href="#"></a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -65,11 +67,13 @@
             <div class="form-group">
               <label for="postTitle">Title</label>
               <input type="text" class="form-control" id="postTitle" placeholder="Eg: Learning JS is fun">
+              <div class="invalid-feedback">Ooops! Please write a nice title for your post &gt;.&lt;</div>
             </div>
 
             <div class="form-group">
               <label for="postAuthor">Author</label>
               <input type="text" class="form-control" id="postAuthor" placeholder="Eg: Paul Nguyen">
+              <div class="invalid-feedback">Please enter author of this post!</div>
             </div>
 
             <div class="form-group">

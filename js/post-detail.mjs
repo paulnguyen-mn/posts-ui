@@ -58,6 +58,11 @@ const init = async () => {
 
     // Fill post data
     fillPostData(post);
+
+    // Show view edit link
+    const goToEditPageLink = document.getElementById('goToEditPageLink');
+    goToEditPageLink.href = `add-edit-post.html?postId=${post.id}`;
+    goToEditPageLink.innerHTML = '<i class="fas fa-edit"></i> Edit post';
   }
 };
 init();
