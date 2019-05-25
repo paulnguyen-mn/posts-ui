@@ -53,3 +53,7 @@ h1.with-underline::after {
 ul {
   list-style-type: none;
 }
+
+::placeholder {
+  font-style: italic;
+}

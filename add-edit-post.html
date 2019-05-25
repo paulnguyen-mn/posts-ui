@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add edit post</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+  <!-- Use font Rubik -->
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+
+  <!-- Internal CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/post-detail.css">
+  <link rel="stylesheet" href="css/add-edit-post.css">
+</head>
+
+<body>
+  <header>
+    <!-- Navigation
+      - Please note that we use an empty item to make sure that we always have 3 flex-items
+        so logo is at centered, and the left and the right item can be optional by leaving it empty
+    -->
+    <nav class="top-nav shadow-sm py-3">
+      <div class="container">
+        <ul class="nav nav-pills nav-justified align-items-center">
+          <li class="nav-item"></li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <img src="images/logo.svg" alt="Logo Nordic Coder">
+            </a>
+          </li>
+
+          <li class="nav-item"></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="postHeroImage" class="hero"></section>
+
+    <section class="post-detail">
+      <div class="container">
+        <div class="post-detail-main shadow-sm">
+          <div class="post-title-wrapper">
+            <h1 id="postDetailTitle">Add edit a post</h1>
+
+            <p>
+              <small class="text-muted">Please enter the following information and submit then.</small>
+            </p>
+          </div>
+
+          <form id="postForm" class="post-form">
+            <div class="form-group">
+              <label for="postTitle">Title</label>
+              <input type="text" class="form-control" id="postTitle" placeholder="Eg: Learning JS is fun">
+            </div>
+
+            <div class="form-group">
+              <label for="postAuthor">Author</label>
+              <input type="text" class="form-control" id="postAuthor" placeholder="Eg: Paul Nguyen">
+            </div>
+
+            <div class="form-group">
+              <label for="postDescription">Description</label>
+              <textarea class="form-control" id="postDescription" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="postChangeImage">Image</label>
+              <small id="passwordHelpBlock" class="form-text text-muted">
+                We&apos;re using <a href="https://picsum.photos">Picsum service</a> to get a random image.
+              </small>
+              <button type="button" id="postChangeImage" class="btn btn-dark">Change post image</button>
+            </div>
+
+            <div class="text-center">
+              <button class="btn btn-primary"><i class="fas fa-save mr-1"></i> Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-muted py-3">
+    <small>Created by Po with <i class="fas fa-heart"></i></small>
+  </footer>
+
+
+  <!-- Scripts should be placed here to prevent blocking render UI -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fetch-polyfill@0.8.2/fetch.min.js"></script>
+  <script async type="module" src="js/add-edit-post.mjs"></script>
+</body>
+
+</html>

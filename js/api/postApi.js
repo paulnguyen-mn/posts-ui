@@ -40,7 +40,7 @@ class PostApi {
     if (!post.id) throw new Error('Missing id in post object');
 
     const url = `${AppConstants.API_URL}/${this.resourceName}/${post.id}`;
-    return fetchClient.post(url, post);
+    return fetchClient.patch(url, post);
   }
 
   /**

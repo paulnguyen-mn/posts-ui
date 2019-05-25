@@ -5,6 +5,10 @@ import utils from './utils.js';
 
 
 const fillPostData = (post) => {
+  // Set SEO meta tags
+  document.title = post.title;
+  document.description = utils.truncateTextlength(post.description, 120);
+
   // Set hero image
   const imageElement = document.getElementById('postHeroImage');
   if (imageElement) {

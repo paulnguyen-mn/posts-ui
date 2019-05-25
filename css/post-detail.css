@@ -1,6 +1,6 @@
 
 section.hero {
-  height: 400px;
+  height: 300px;
   background: #eee;
   background-size: cover;
   background-position: center;
@@ -11,7 +11,7 @@ section.hero {
 .post-detail {}
 
 .post-detail .post-detail-main {
-  margin-top: -5rem;
+  margin-top: -4rem;
   padding: 2rem;
   border-radius: .25rem;
   background-color: white;

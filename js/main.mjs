@@ -43,11 +43,23 @@ const renderPostItem = (post) => {
 
   // Add item click to go view detail page
   const postItem = postItemElement.getElementById('postItem');
-  postItem.addEventListener('click', function () {
+  postItem.addEventListener('click', () => {
     const detailPageUrl = `post-detail.html?postId=${post.id}`;
 
     // Go to detail page
     window.location = detailPageUrl;
+  });
+
+  // Go to edit page when click on edit icon
+  const editIcon = postItemElement.getElementById('postItemEdit');
+  editIcon.addEventListener('click', (e) => {
+    const editPageUrl = `add-edit-post.html?postId=${post.id}`;
+
+    // Go to detail page
+    window.location = editPageUrl;
+
+    // Prevent bubbling click event on parent element
+    e.stopPropagation();
   });
 
   return postItemElement;
@@ -62,7 +74,6 @@ const resetPostsElementNode = (postsElement) => {
 }
 
 const renderListOfPosts = (posts) => {
-  console.log('Render list of posts: ', posts);
   const postsElement = document.getElementById('postsList');
 
   if (postsElement) {
@@ -95,7 +106,12 @@ const renderPostsPagination = (pagination) => {
 const init = async () => {
   try {
     // Fetch list of posts item
-    const response = await postApi.getAll({ _limit: 6 });
+    const params = {
+      _limit: 6,
+      _sort: 'updatedAt',
+      _order: 'desc',
+    };
+    const response = await postApi.getAll(params);
 
     if (response) {
       const { data: posts, pagination } = response;
