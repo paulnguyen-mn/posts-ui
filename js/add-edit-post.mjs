@@ -118,7 +118,7 @@ const init = async () => {
     // Show view detail link
     const goToDetailPageLink = document.getElementById('goToDetailPageLink');
     goToDetailPageLink.href = `post-detail.html?postId=${post.id}`;
-    goToDetailPageLink.innerText = 'View post detail';
+    goToDetailPageLink.innerHTML = '<i class="fas fa-eye mr-1"></i> View post detail';
   } else {
     // What we do in ADD mode
     // Random a post image =))
