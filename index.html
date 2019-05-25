@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Posts UI</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+  <!-- Use font Rubik -->
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+
+  <!-- Internal CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+  <header>
+    <!-- Navigation
+      - Please note that we use an empty item to make sure that we always have 3 flex-items
+        so logo is at centered, and the left and the right item can be optional by leaving it empty
+    -->
+    <nav class="top-nav shadow-sm py-3">
+      <div class="container">
+        <ul class="nav nav-pills nav-justified align-items-center">
+          <li class="nav-item">
+            <!-- Nothing here -->
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <img src="images/logo.svg" alt="Logo Nordic Coder">
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="add-edit-post.html">Add new post</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="posts-section">
+      <div class="container">
+        <h1 class="text-center">Latest posts</h1>
+
+        <!-- Posts list -->
+        <ul class="row">
+          <li class="col-12 col-md-6 col-lg-4">
+            <div class="post-item mb-4">
+              <div class="card">
+                <img src="images/recipe.jpg" class="card-img-top" alt="recipe">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.
+                  </p>
+
+                  <p class="card-text">
+                    <small class="text-muted">by</small>
+                    <small class="text-muted font-weight-bold">Hau Nguyen</small>
+                    <small class="text-muted">- 3 mins ago</small>
+                  </p>
+                </div>
+              </div>
+
+              <div class="post-item-menu">
+                <div class="menu-item rounded-circle"><i class="fas fa-pen"></i></div>
+                <div class="menu-item rounded-circle"><i class="fas fa-trash"></i></div>
+              </div>
+            </div>
+          </li>
+
+          <li class="col-12 col-md-6 col-lg-4">
+            <div class="post-item mb-4">
+              <div class="card">
+                <img src="images/recipe.jpg" class="card-img-top" alt="recipe">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.
+                  </p>
+
+                  <p class="card-text">
+                    <small class="text-muted">by</small>
+                    <small class="text-muted font-weight-bold">Hau Nguyen</small>
+                    <small class="text-muted">- 3 mins ago</small>
+                  </p>
+                </div>
+              </div>
+
+              <div class="post-item-menu">
+                <div class="menu-item rounded-circle"><i class="fas fa-pen"></i></div>
+                <div class="menu-item rounded-circle"><i class="fas fa-trash"></i></div>
+              </div>
+            </div>
+          </li>
+
+          <li class="col-12 col-md-6 col-lg-4">
+            <div class="post-item mb-4">
+              <div class="card">
+                <img src="images/recipe.jpg" class="card-img-top" alt="recipe">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.
+                  </p>
+
+                  <p class="card-text">
+                    <small class="text-muted">by</small>
+                    <small class="text-muted font-weight-bold">Hau Nguyen</small>
+                    <small class="text-muted">- 3 mins ago</small>
+                  </p>
+                </div>
+              </div>
+
+              <div class="post-item-menu">
+                <div class="menu-item rounded-circle"><i class="fas fa-pen"></i></div>
+                <div class="menu-item rounded-circle"><i class="fas fa-trash"></i></div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Posts pagination -->
+        <nav class="posts-nav" aria-label="Posts navigation">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-muted py-3">
+    <small>Created by Po with <i class="fas fa-heart"></i></small>
+  </footer>
+
+
+  <!-- Scripts should be placed here to prevent blocking render UI -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fetch-polyfill@0.8.2/fetch.min.js"></script>
+  <script async type="module" src="js/main.mjs"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Make footer always at bottom of our screen */
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+
+  font-family: 'Rubik', sans-serif;
+}
+
+body > main {
+  flex: 1 1 auto;
+}
+
+/* Override link style */
+a {
+  color: rgba(255, 106, 1, 1);
+}
+a:hover {
+  color: rgb(255, 106, 1, .75);
+}
+
+
+
+/* Add underline for all h1 */
+h1 {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + .5rem);
+  left: 0;
+  right: 0;
+
+  width: 5rem;
+  height: .25rem;
+  margin: 0 auto;
+  border-radius: .25rem;
+
+  background-color: #444;
+}
+
+
+/* Reset ul style */
+ul {
+  list-style-type: none;
+}
