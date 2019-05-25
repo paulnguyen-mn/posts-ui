@@ -21,7 +21,7 @@ const request = async (url, options = {}) => {
     // so we need to detect and handle error by ourself
     if (response.ok) {
       // Parse reponse to JSON
-      const jsonData = await response.json();
+      return response.json();
     }
 
     // Handle error
@@ -50,7 +50,6 @@ const patch = async (url, body) => request(url, { method: 'PATCH', body: JSON.st
 
 // Remove
 const deleteRequest = async (url) => request(url, { method: 'DELETE' });
-
 
 const fetchClient = {
   get,

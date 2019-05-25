@@ -3,6 +3,10 @@
   padding: 3rem 0;
 }
 
+.posts-section .post-item .card-title {
+  color: rgba(255, 106, 1, 1);
+}
+
 /* Add box shadow on card hover */
 .posts-section .post-item:hover {
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
@@ -14,6 +18,8 @@
   overflow: hidden;
 }
 .posts-section .post-item .card-img-top {
+  height: 200px;
+  width: auto;
   transition: all .5s;
 }
 .posts-section .post-item:hover .card-img-top {

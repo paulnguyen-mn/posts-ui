@@ -25,6 +25,37 @@
 
 <body>
 
+  <!-- This is a template HTML for a post item -->
+  <template id="postItemTemplate">
+    <li class="col-12 col-md-6 col-lg-4">
+      <div class="post-item mb-4">
+        <div class="card">
+          <img id="postItemImage" src="images/recipe.jpg" class="card-img-top" alt="recipe">
+
+          <div class="card-body">
+            <h5 id="postItemTitle" class="card-title">Card title</h5>
+
+            <p id="postItemDescription" class="card-text">
+              This is a wider card with supporting text below as a natural lead-in to
+              additional content. This content is a little bit longer.
+            </p>
+
+            <p class="card-text">
+              <small class="text-muted">by</small>
+              <small id="postItemAuthor" class="text-muted font-weight-bold">Hau Nguyen</small>
+              <small id="postItemTimeSpan" class="text-muted">- 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+
+        <div class="post-item-menu">
+          <div id="postItemEdit" class="menu-item rounded-circle"><i class="fas fa-pen"></i></div>
+          <div id="postItemRemove" class="menu-item rounded-circle"><i class="fas fa-trash"></i></div>
+        </div>
+      </div>
+    </li>
+  </template>
+
   <header>
     <!-- Navigation
       - Please note that we use an empty item to make sure that we always have 3 flex-items
@@ -57,93 +88,12 @@
         <h1 class="text-center">Latest posts</h1>
 
         <!-- Posts list -->
-        <ul class="row">
-          <li class="col-12 col-md-6 col-lg-4">
-            <div class="post-item mb-4">
-              <div class="card">
-                <img src="images/recipe.jpg" class="card-img-top" alt="recipe">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
-                  </p>
-
-                  <p class="card-text">
-                    <small class="text-muted">by</small>
-                    <small class="text-muted font-weight-bold">Hau Nguyen</small>
-                    <small class="text-muted">- 3 mins ago</small>
-                  </p>
-                </div>
-              </div>
-
-              <div class="post-item-menu">
-                <div class="menu-item rounded-circle"><i class="fas fa-pen"></i></div>
-                <div class="menu-item rounded-circle"><i class="fas fa-trash"></i></div>
-              </div>
-            </div>
-          </li>
-
-          <li class="col-12 col-md-6 col-lg-4">
-            <div class="post-item mb-4">
-              <div class="card">
-                <img src="images/recipe.jpg" class="card-img-top" alt="recipe">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
-                  </p>
-
-                  <p class="card-text">
-                    <small class="text-muted">by</small>
-                    <small class="text-muted font-weight-bold">Hau Nguyen</small>
-                    <small class="text-muted">- 3 mins ago</small>
-                  </p>
-                </div>
-              </div>
-
-              <div class="post-item-menu">
-                <div class="menu-item rounded-circle"><i class="fas fa-pen"></i></div>
-                <div class="menu-item rounded-circle"><i class="fas fa-trash"></i></div>
-              </div>
-            </div>
-          </li>
-
-          <li class="col-12 col-md-6 col-lg-4">
-            <div class="post-item mb-4">
-              <div class="card">
-                <img src="images/recipe.jpg" class="card-img-top" alt="recipe">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
-                  </p>
-
-                  <p class="card-text">
-                    <small class="text-muted">by</small>
-                    <small class="text-muted font-weight-bold">Hau Nguyen</small>
-                    <small class="text-muted">- 3 mins ago</small>
-                  </p>
-                </div>
-              </div>
-
-              <div class="post-item-menu">
-                <div class="menu-item rounded-circle"><i class="fas fa-pen"></i></div>
-                <div class="menu-item rounded-circle"><i class="fas fa-trash"></i></div>
-              </div>
-            </div>
-          </li>
-
+        <ul id="postsList" class="row posts-list">
         </ul>
 
         <!-- Posts pagination -->
         <nav class="posts-nav" aria-label="Posts navigation">
-          <ul class="pagination justify-content-center">
+          <ul id="postsPagination" class="pagination justify-content-center">
             <li class="page-item">
               <a class="page-link" href="#" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
