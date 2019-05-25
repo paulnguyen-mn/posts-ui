@@ -1,0 +1,29 @@
+
+section.hero {
+  height: 400px;
+  background: #eee;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.post-detail {}
+
+.post-detail .post-detail-main {
+  margin-top: -5rem;
+  padding: 2rem;
+  border-radius: .25rem;
+  background-color: white;
+}
+
+.post-detail .post-title-wrapper {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+
+.post-detail .post-image {
+  width: 100%;
+  margin-bottom: 1rem;
+}

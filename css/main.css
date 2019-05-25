@@ -28,12 +28,12 @@ a:hover {
 
 
 /* Add underline for all h1 */
-h1 {
+h1.with-underline {
   position: relative;
   margin-bottom: 3rem;
 }
 
-h1::after {
+h1.with-underline::after {
   content: '';
   position: absolute;
   top: calc(100% + .5rem);

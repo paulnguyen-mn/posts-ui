@@ -37,10 +37,18 @@ const renderPostItem = (post) => {
   // Set created time
   const timeSpanElement = postItemElement.getElementById('postItemTimeSpan');
   if (timeSpanElement) {
-    console.log(post.createdAt);
     const timeString = utils.formatDate(post.createdAt);
     timeSpanElement.innerText = ` - ${timeString}`;
   }
+
+  // Add item click to go view detail page
+  const postItem = postItemElement.getElementById('postItem');
+  postItem.addEventListener('click', function () {
+    const detailPageUrl = `${window.origin}/post-detail.html?postId=${post.id}`;
+
+    // Go to detail page
+    window.location = detailPageUrl;
+  });
 
   return postItemElement;
 };

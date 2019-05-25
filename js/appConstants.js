@@ -4,6 +4,7 @@ const AppConstants = {
   DEFAULT_LIMIT: 10,
 
   DEFAULT_IMAGE_URL: 'images/recipe.jpg',
+  DEFAULT_HERO_IMAGE_URL: 'https://picsum.photos/1368/400',
 
   // API URL
   API_URL: 'https://js-post-api.herokuapp.com/api',

@@ -16,8 +16,8 @@ const formatDate = (dateString) => {
   const date = new Date(dateString);
   const hour = date.getHours();
   const minute = date.getMinutes();
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
+  const day = `0${date.getDate()}`.slice(-2);
+  const month = `0${date.getMonth() + 1}`.slice(-2);
   const year = date.getFullYear();
 
   return `${hour}:${minute} ${day}/${month}/${year}`;
