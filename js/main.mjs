@@ -4,6 +4,21 @@ import postApi from './api/postApi.js';
 import AppConstants from './appConstants.js';
 import utils from './utils.js';
 
+const handlePostItemRemoveClick = async (post) => {
+  try {
+    const confirmMessage = `Remove this post ${post.title}. Really?!`;
+    if (window.confirm(confirmMessage)) {
+      // Remove this post
+      await postApi.removePost(post.id);
+
+      // Reload current page
+      window.location.reload();
+    }
+  } catch (error) {
+    alert('Failed to remove post: ', error);
+  }
+};
+
 const renderPostItem = (post) => {
   // Get post item template
   const postItemTemplate = document.getElementById('postItemTemplate');
@@ -57,6 +72,15 @@ const renderPostItem = (post) => {
 
     // Go to detail page
     window.location = editPageUrl;
+
+    // Prevent bubbling click event on parent element
+    e.stopPropagation();
+  });
+
+  // Confirm to remove a post
+  const removeIcon = postItemElement.getElementById('postItemRemove');
+  removeIcon.addEventListener('click', (e) => {
+    handlePostItemRemoveClick(post);
 
     // Prevent bubbling click event on parent element
     e.stopPropagation();
