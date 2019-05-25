@@ -2,7 +2,9 @@ import fetchClient from "./fetchClient.js";
 import AppConstants from '../appConstants.js';
 
 class PostApi {
-  resourceName = 'posts';
+  constructor() {
+    this.resourceName = 'posts';
+  }
 
   /**
    * Get a list of posts with pagination, sort, filter supported
