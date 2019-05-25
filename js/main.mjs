@@ -44,7 +44,7 @@ const renderPostItem = (post) => {
   // Add item click to go view detail page
   const postItem = postItemElement.getElementById('postItem');
   postItem.addEventListener('click', function () {
-    const detailPageUrl = `/post-detail.html?postId=${post.id}`;
+    const detailPageUrl = `post-detail.html?postId=${post.id}`;
 
     // Go to detail page
     window.location = detailPageUrl;
