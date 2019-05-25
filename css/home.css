@@ -31,9 +31,21 @@
   position: relative;
 }
 
-.posts-section .post-item:hover .post-item-menu {
+.posts-section .post-item .post-item-menu {
   transform: scale(1);
   opacity: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  .posts-section .post-item .post-item-menu {
+    transform: scale(.5);
+    opacity: 0;
+  }
+
+  .posts-section .post-item:hover .post-item-menu {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .posts-section .post-item-menu {
