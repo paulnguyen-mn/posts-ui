@@ -3,6 +3,7 @@
 import postApi from './api/postApi.js';
 import AppConstants from './appConstants.js';
 import utils from './utils.js';
+import queryString from './lib/queryString.js';
 
 const handlePostItemRemoveClick = async (post) => {
   try {
@@ -118,8 +119,80 @@ const renderListOfPosts = (posts) => {
   }
 };
 
+/**
+ * Return a list of 3 page value: prev, curr and next
+ * -1 means you should hide that item
+ * 0 means you should disable that item
+ * otherwise, show that item
+ * @param pagination 
+ */
+const getPageList = (pagination) => {
+  const { _limit, _totalRows, _page } = pagination;
+  const totalPages = Math.ceil(_totalRows / _limit);
+  let prevPage = -1;
+
+  // Return -1 if invalid page detected
+  if (_page < 1 || _page > totalPages) return [0, -1, -1, -1, 0];
+
+
+  // Calculate prev page
+  if (_page === 1) prevPage = 1;
+  else if (_page === totalPages) prevPage = _page - 2 > 0 ? _page - 2 : 1;
+  else prevPage = _page - 1;
+
+  const currPage = prevPage + 1 > totalPages ? -1 : prevPage + 1;
+  const nextPage = prevPage + 2 > totalPages ? -1 : prevPage + 2;
+
+  return [
+    _page === 1 || _page === 1 ? 0 : _page - 1,
+    prevPage, currPage, nextPage,
+    _page === totalPages || totalPages === _page ? 0 : _page + 1,
+  ];
+}
+
 const renderPostsPagination = (pagination) => {
-  console.log('Render post pagination: ', pagination);
+  const postPagination = document.querySelector('#postsPagination');
+  if (postPagination) {
+    const pageList = getPageList(pagination);
+    const { _page, _limit } = pagination;
+    // Search list of 5 page items
+    const pageItems = postPagination.querySelectorAll('.page-item');
+
+    // Just to make sure pageItems has exactly 5 items
+    if (pageItems.length === 5) {
+      pageItems.forEach((item, idx) => {
+        switch (pageList[idx]) {
+          case -1:
+            item.setAttribute('hidden', '');
+            break;
+          case 0:
+            item.classList.add('disabled');
+            break;
+          default: {
+            // Find page link
+            const pageLink = item.querySelector('.page-link');
+            if (pageLink) {
+              // Update href of page link
+              pageLink.href = `?_page=${pageList[idx]}&_limit=${_limit}`;
+
+              // Update text content of page link for item: 1, 2, 3 (zero base)
+              if (idx > 0 && idx < 4) {
+                pageLink.textContent = pageList[idx];
+              }
+            }
+
+            // Set current active page item, only for 1, 2, 3 (zero base)
+            if (idx > 0 && idx < 4 && pageList[idx] === _page) {
+              item.classList.add('active');
+            }
+          }
+        }
+      });
+
+      // Show pagination
+      postPagination.removeAttribute('hidden');
+    }
+  }
 };
 
 
@@ -129,9 +202,15 @@ const renderPostsPagination = (pagination) => {
 // -----------------------
 const init = async () => {
   try {
+    let search = window.location.search;
+    // Remove beginning question mark
+    search = search ? search.substring(1) : '';
+
+    const { _page, _limit } = queryString.parse(search);
     // Fetch list of posts item
     const params = {
-      _limit: 6,
+      _page: _page || AppConstants.DEFAULT_PAGE,
+      _limit: _limit || AppConstants.DEFAULT_LIMIT,
       _sort: 'updatedAt',
       _order: 'desc',
     };
