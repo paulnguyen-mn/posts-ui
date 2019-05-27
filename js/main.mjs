@@ -220,6 +220,25 @@ const init = async () => {
       const { data: posts, pagination } = response;
       renderListOfPosts(posts);
       renderPostsPagination(pagination);
+
+      // Animate to show list of posts smoothly
+      anime({
+        targets: 'ul.posts-list > li',
+        scale: [
+          { value: 0.8, duration: 0 },
+          { value: 1, duration: 300 },
+        ],
+        opacity: [
+          { value: 0, duration: 0 },
+          { value: 1, duration: 250 },
+        ],
+        translateY: [
+          { value: 50, duration: 0 },
+          { value: 0, duration: 500 },
+        ],
+        delay: anime.stagger(150), // increase delay by 100ms for each elements.
+        easing: 'linear'
+      });
     }
   } catch (error) {
     console.log('Failed to fetch list of posts: ', error);
@@ -227,4 +246,5 @@ const init = async () => {
 };
 
 // Start initialization process
+// console.log(anime);
 init();
