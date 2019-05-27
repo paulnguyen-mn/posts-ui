@@ -41,7 +41,13 @@ const renderPostItem = (post) => {
   // Set image
   const imageElement = postItemElement.getElementById('postItemImage');
   if (imageElement) {
-    imageElement.src = post.imageUrl || AppConstants.DEFAULT_IMAGE_URL;
+    // imageElement.src = post.imageUrl || AppConstants.DEFAULT_IMAGE_URL;
+    // Use a smaller size image for thumb
+    const thumbSrc = post.imageUrl.split('/');
+    thumbSrc.pop();
+    thumbSrc.pop();
+    thumbSrc.push('400', '117');
+    imageElement.src = thumbSrc.join('/');
   }
 
   // Set author

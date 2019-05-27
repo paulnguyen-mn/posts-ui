@@ -12,6 +12,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Light box -->
+  <link rel="stylesheet" href="lightbox/css/lightbox.min.css">
 
   <!-- Font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -79,7 +81,9 @@
               deserunt.
             </p>
 
-            <img class="post-image" src="https://picsum.photos/1368/500" alt="Picsum photos">
+            <a href="https://picsum.photos/1368/800" data-lightbox="image-1" data-title="Picsum photos">
+              <img class="post-image" src="https://picsum.photos/1368/800" alt="Picsum photos">
+            </a>
 
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci suscipit inventore hic tenetur, dolor
@@ -99,7 +103,9 @@
               deserunt.
             </p>
 
-            <img class="post-image" src="https://picsum.photos/1368/1000" alt="Picsum photos">
+            <a href="https://picsum.photos/1368/1000" data-lightbox="image-2" data-title="Picsum photos">
+              <img class="post-image" src="https://picsum.photos/1368/1000" alt="Picsum photos">
+            </a>
 
 
             <p>
@@ -121,6 +127,7 @@
   <!-- Scripts should be placed here to prevent blocking render UI -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fetch-polyfill@0.8.2/fetch.min.js"></script>
+  <script src="lightbox/js/lightbox-plus-jquery.min.js"></script>
   <script async type="module" src="js/post-detail.mjs"></script>
 </body>
 
